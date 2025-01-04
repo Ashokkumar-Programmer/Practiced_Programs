@@ -1,8 +1,7 @@
 package TCS.arrays;
 
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.LinkedList;
 
 /*
 
@@ -37,25 +36,26 @@ Output:
 */
 
 public class Sort_an_array_according_to_the_order_defined_by_another_array {
-	
+	boolean check(int arr[], int value) {
+		for(int i: arr) {
+			if(i==value) return true;
+		}
+		return false;
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		Sort_an_array_according_to_the_order_defined_by_another_array s = new Sort_an_array_according_to_the_order_defined_by_another_array();
 		int arr1[] = {9, 1, 4, 1, 3, 7, 8, 2};
 		int arr2[] = {3, 9, 2, 4};
-		Set<Integer> set1 = new HashSet<Integer>();
-		for(int i: arr1) {
-			set1.add(i);
-		}
+		LinkedList<Integer> list = new LinkedList<Integer>();
 		for(int i: arr2) {
-			set1.add(i);
+			list.add(i);
 		}
-		int result[] = new int[set1.size()];
-		int index=0;
-		for(int i: set1) {
-			result[index] = i;
-			index++;
+		for(int i: arr1) {
+			if(!s.check(arr2, i)) {
+				list.add(i);
+			}
 		}
-		System.out.println(Arrays.toString(result));
+		System.out.println(list);
 	}
-
 }
