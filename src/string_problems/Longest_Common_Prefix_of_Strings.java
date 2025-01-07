@@ -1,4 +1,4 @@
-package propel;
+package string_problems;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package propel;
+package string_problems;
 
 /*
 Given a string s, reverse the string without reversing its individual words. Words are separated by spaces.
